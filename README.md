@@ -1,5 +1,4 @@
-Web Development Bootcamp
-Welcome to my Web Development Bootcamp journey! 🚀
+##Welcome to my Web Development Bootcamp journey! 🚀
 
 I started this bootcamp to transition into the world of web development, where I’ve learned how to build dynamic, responsive websites from scratch. The bootcamp covered essential topics like HTML, CSS, JavaScript, other frameworks,libraries and best practices for version control with Git. During this process, I created a number of real-world projects, each helping me sharpen my skills and build a strong foundation in front-end development.
 
