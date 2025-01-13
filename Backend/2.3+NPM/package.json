@@ -1,0 +1,22 @@
+{
+  "name": "learning-npm",
+  "version": "1.0.0",
+  "description": "I'm learning about NPM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ama-Nkansah/Web-development-Bootcamp.git"
+  },
+  "author": "Ama- Nkansah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ama-Nkansah/Web-development-Bootcamp/issues"
+  },
+  "homepage": "https://github.com/Ama-Nkansah/Web-development-Bootcamp#readme",
+  "dependencies": {
+    "sillyname": "^0.1.0"
+  }
+}
