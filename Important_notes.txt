@@ -33,6 +33,8 @@
 - **jQuery to DOM**: `$('#myDiv')[0]`
 - **DOM to jQuery**: `$(document.getElementById('myDiv'))`
 
+
+
 # Understanding Terminal Emulator and Shell
 
 ## What is a Terminal Emulator?
