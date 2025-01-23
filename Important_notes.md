@@ -1,3 +1,155 @@
+# Why is JavaScript Called an Object-Oriented Programming Language?
+
+### **Question:**  
+Why is JavaScript called an object-oriented programming language?
+
+### **Answer:**  
+JavaScript is called object-oriented because it uses **objects** to organize code. Objects allow us to group **data** (called properties) and **behavior** (called methods) together.  
+
+Additionally, JavaScript supports key concepts of object-oriented programming like:  
+1. **Encapsulation:** Bundling data and behavior in one place.  
+2. **Inheritance:** Allowing objects to share or extend features from other objects, enabling code reuse.  
+
+This makes JavaScript a flexible and powerful tool for writing clean, structured, and manageable code.  
+
+
+# JavaScript Prototypes
+
+### **What is a Prototype?**
+
+A **prototype** is like a blueprint in JavaScript. It allows objects to share methods and properties, so you don’t need to duplicate them for every object.
+
+When you create an object, it can look up methods or properties it doesn’t have in its **prototype**. This is called the **prototype chain**.
+
+---
+
+### **Built-in Prototypes**
+
+JavaScript already provides built-in prototypes for commonly used objects, such as:
+
+1. **Object.prototype**: Every object inherits from this. Examples:
+   - `toString()`
+   - `hasOwnProperty()`
+
+2. **Array.prototype**: Arrays inherit methods like:
+   - `push()`
+   - `pop()`
+   - `map()`
+
+3. **String.prototype**: Strings inherit methods like:
+   - `toUpperCase()`
+   - `substring()`
+
+Example:
+
+```javascript
+let fruits = ["Apple", "Banana"];
+fruits.push("Orange"); // Uses Array.prototype.push
+console.log(fruits); // ["Apple", "Banana", "Orange"]
+
+let text = "Hello";
+console.log(text.toUpperCase()); // Uses String.prototype.toUpperCase
+```
+
+---
+
+### **Creating Your Own Prototype**
+
+You can add your own methods to a prototype to share them across objects created by a constructor function:
+
+```javascript
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+// Adding a method to the prototype
+Person.prototype.greet = function () {
+  return `Hi, my name is ${this.name} and I'm ${this.age} years old!`;
+};
+
+let robbie = new Person("Robbie", 25);
+let alice = new Person("Alice", 30);
+
+console.log(robbie.greet()); // "Hi, my name is Robbie and I'm 25 years old!"
+console.log(alice.greet());  // "Hi, my name is Alice and I'm 30 years old!"
+```
+
+---
+
+### **Prototype Chain**
+
+If a method or property is not found on an object, JavaScript looks for it in the object’s prototype, and then its prototype’s prototype, and so on, until it reaches `null`. This is the **prototype chain**.
+
+Example:
+
+```javascript
+let obj = {};
+console.log(obj.toString()); // Found in Object.prototype
+```
+
+---
+
+### **Extending Built-in Prototypes (Be Careful!)**
+
+You can add methods to built-in prototypes, but it’s usually not a good idea because it can cause conflicts in your code or with libraries.
+
+Example:
+
+```javascript
+Array.prototype.sayHi = function () {
+  console.log("Hi from Array!");
+};
+
+let myArray = [1, 2, 3];
+myArray.sayHi(); // "Hi from Array!"
+```
+
+While this works, modifying built-in prototypes can break other code, so use it with caution.
+
+
+
+# JavaScript Constructor Functions
+
+### **What is a Constructor Function?**
+
+A **constructor function** is a special function used to create objects with the same structure and methods. It acts as a blueprint for building objects.
+
+### **How to Create a Constructor Function**
+
+1. Define a function with a capitalized name (by convention).
+2. Use the `this` keyword to set properties specific to each object.
+3. Use `new` to create objects from the constructor.
+
+Example:
+
+```javascript
+function Person(name, age) {
+  this.name = name; // Assigns a name property
+  this.age = age;   // Assigns an age property
+}
+
+let robbie = new Person("Robbie", 25);
+let alice = new Person("Alice", 30);
+
+console.log(robbie.name); // "Robbie"
+console.log(alice.age);  // 30
+```
+
+### **Adding Methods with Prototypes**
+
+Instead of defining methods inside the constructor, use the prototype to share methods among all objects:
+
+```javascript
+Person.prototype.greet = function () {
+  return `Hi, I'm ${this.name}!`;
+};
+
+console.log(robbie.greet()); // "Hi, I'm Robbie!"
+console.log(alice.greet());  // "Hi, I'm Alice!"
+
+
+
 # Difference Between jQuery Object and Normal JavaScript Object
 
 ### Normal JavaScript Object
