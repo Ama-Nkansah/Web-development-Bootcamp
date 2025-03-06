@@ -231,3 +231,14 @@ Bash (Bourne Again Shell) is a popular shell that interprets your commands and e
 
 Together, they create a seamless and efficient environment for working on your computer!
 
+
+
+## On the frontend, you always use fetch() to talk to the backend. You tell it what method to use (GET, POST, etc.).
+
+Example: `fetch(url, { method: 'GET' })` for getting data or `fetch(url, { method: 'POST' })` for sending data.
+
+## On the backend, you create routes with .get(), .post(), etc., to handle the requests from the frontend.
+
+Example: `app.get()` to respond to a GET request or `app.post()` to respond to a POST request.
+
+## The frontend method (GET/POST) in fetch() must match the backend route method (.get()/.post()) for them to work together.
