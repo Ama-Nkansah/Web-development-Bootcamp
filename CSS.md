@@ -109,4 +109,7 @@ npm run build:css
 2. **Process with PostCSS:** Use PostCSS with Tailwind and Autoprefixer to generate `output.css`.
 3. **Deploy with `output.css`:** Link `output.css` to your HTML for a clean and production-ready website.
 
+
+NOW TAILWIND HAS A NEW VERSION SEARCH V4(NEED TO READ DOCS BEFORE USING)
+
 By following these steps, your project will have a structured and efficient setup for using Tailwind CSS with PostCSS. Happy coding!
