@@ -20,11 +20,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 function password(req, res, next) {
   if (req.body.password === userpass){
     user = true;
-    return next();
   }
-    else{
-      res.redirect("/");
-      }
+   next();
     };
     
     app.get("/", (req, res) => {
