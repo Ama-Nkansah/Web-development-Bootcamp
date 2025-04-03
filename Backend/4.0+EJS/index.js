@@ -5,7 +5,7 @@ const port = 3000;
 app.set('view engine', 'ejs');
 
 
-const today= new Date("2025-04-03");
+const today= new Date();
 const day = today.getDay();
 const dayNames = ["Sunday", "Monday", "Tuesday",'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
