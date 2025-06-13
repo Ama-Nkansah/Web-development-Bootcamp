@@ -70,9 +70,28 @@ app.get("/posts/:id", (req, res) => {
 });
 
 //CHALLENGE 4: PATCH a post when you just want to update one parameter
+app.patch('/posts/:id', (req, res) => {
+   const id = parseInt(req.params.id);
+   const foundPost = posts.find((post) => post.id===id);
+   if (!foundPost) return res.status(404).json({ message: "Post not found" });
+
+
+  if (req.body.title) foundPost.title = req.body.title;
+  if (req.body.content) foundPost.content = req.body.content;
+  if (req.body.author) foundPost.author = req.body.author;
+  res.send('POST request to homepage')
+});
+
 
 //CHALLENGE 5: DELETE a specific post by providing the post id.
+app.delete('/posts/:id', (req, res) => {
+   const id = parseInt(req.params.id);
+   const foundPost = posts.findIndex((post) => post.id===id);
+   if (!index===-1) return res.status(404).json({ message: "Post not found" });
 
+  posts.splice(index, 1);
+  res.json({ message: "Post deleted" });
+});
 app.listen(port, () => {
   console.log(`API is running at http://localhost:${port}`);
 });
